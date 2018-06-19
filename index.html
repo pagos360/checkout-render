@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+
+    <title>Demo</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light mb-5">
+        <span class="navbar-brand mb-0 h1">Cofradía de la Merced</span>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="https://qa.checkout.pagos360.com/payment-request/f02846fe-6f4d-11e8-87e5-0e5ec901c278" id="pagos360-pay-button"
+                    class="btn btn-primary">
+                    Pagar con Pagos360.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        (function () {
+            function load() {
+                window.isLoaded !== true && (function () {
+                    var s = document.createElement("script");
+                    s.type = "text/javascript";
+                    s.async = true;
+                    // s.src = document.location.protocol + "//checkout.pagos360.com/render.js";
+                    s.src = "render.js";
+                    var x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                    window.isLoaded = true;
+                })();
+            }
+
+            window.isLoaded !== true ? (window.attachEvent ? window.attachEvent('onload', load) : window.addEventListener('load', load, false)) : null;
+        })();
+    </script>
+</body>
+
+</html>
