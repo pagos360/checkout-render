@@ -5,7 +5,7 @@
     const payButton = doc.getElementById('pagos360-pay-button');
 
     const overlay = doc.createElement('div');
-    overlay.id = 'modal-overlay';
+    overlay.id = 'p360-modal-overlay';
     overlay.setAttribute('style', `
             position: fixed; 
             top: 0; 
@@ -19,7 +19,7 @@
         `);
 
     const overlayWrapper = doc.createElement('div');
-    overlayWrapper.id = 'modal-overlay-wrapper';
+    overlayWrapper.id = 'p360-modal-overlay-wrapper';
     overlayWrapper.appendChild(overlay);
     overlayWrapper.setAttribute('style', `
             top: 0;
@@ -30,7 +30,7 @@
         `);
 
     const popbox = doc.createElement('iframe');
-    popbox.id = 'modal-popbox';
+    popbox.id = 'p360-modal-popbox';
     popbox.src = payButton.href;
     popbox.setAttribute('style', `
             border: 0;
@@ -39,7 +39,7 @@
         `);
 
     const contentFixed = doc.createElement('div');
-    contentFixed.id = 'modal-content-fixed';
+    contentFixed.id = 'p360-modal-content-fixed';
     contentFixed.appendChild(popbox);
     contentFixed.setAttribute('style', `
             top: 50%;
@@ -58,9 +58,9 @@
     doc.body.appendChild(overlayWrapper);
     doc.body.appendChild(contentFixed);
 
-    doc.getElementById('modal-overlay-wrapper').style.display = 'none';
-    doc.getElementById('modal-overlay').style.display = 'none';
-    doc.getElementById('modal-content-fixed').style.display = 'none';
+    doc.getElementById('p360-modal-overlay-wrapper').style.display = 'none';
+    doc.getElementById('p360-modal-overlay').style.display = 'none';
+    doc.getElementById('p360-modal-content-fixed').style.display = 'none';
 
     /**
      * Bind a element event with a 
@@ -86,9 +86,9 @@
      * @param {*} event 
      */
     function openModal(event) {
-        doc.getElementById('modal-overlay-wrapper').style.display = '';
-        doc.getElementById('modal-overlay').style.display = '';
-        doc.getElementById('modal-content-fixed').style.display = '';
+        doc.getElementById('p360-modal-overlay-wrapper').style.display = '';
+        doc.getElementById('p360-modal-overlay').style.display = '';
+        doc.getElementById('p360-modal-content-fixed').style.display = '';
 
         event.preventDefault();
     }
@@ -97,9 +97,9 @@
      * Hide the modal.
      */
     function hideModal() {
-        doc.getElementById('modal-overlay-wrapper').style.display = 'none';
-        doc.getElementById('modal-overlay').style.display = 'none';
-        doc.getElementById('modal-content-fixed').style.display = 'none';
+        doc.getElementById('p360-modal-overlay-wrapper').style.display = 'none';
+        doc.getElementById('p360-modal-overlay').style.display = 'none';
+        doc.getElementById('p360-modal-content-fixed').style.display = 'none';
     }
 
     /**
