@@ -34,14 +34,18 @@
     popbox.src = payButton.href;
     popbox.setAttribute('style', `
             border: 0;
-            width: 350px;
-            height: 400px;
+            width: 100%;
+            height: 100%;
         `);
 
     const contentFixed = doc.createElement('div');
     contentFixed.id = 'p360-modal-content-fixed';
     contentFixed.appendChild(popbox);
     contentFixed.setAttribute('style', `
+            height: 30rem;
+            max-height: 90%;
+            width: fit-content;
+            max-width: 90%;
             top: 50%;
             left: 50%;
             position: fixed;
