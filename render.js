@@ -42,7 +42,7 @@
     contentFixed.id = 'p360-modal-content-fixed';
     contentFixed.appendChild(popbox);
     contentFixed.setAttribute('style', `
-            height: 30rem;
+            height: 34rem;
             max-height: 90%;
             width: fit-content;
             max-width: 90%;
