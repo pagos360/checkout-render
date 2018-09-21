@@ -1,15 +1,6 @@
 Pagos360.com checkout render
 ===================================
 
-Quick start
------------
-
-- Clone the repo: `git clone https://github.com/pagos360/pagos360-v2.git`
-- That's it!
-
-How to use
--------------------
-
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +8,9 @@ How to use
     <title>Demo</title>
 </head>
 <body>
-    <a href="{checkout url}" id="pagos360-pay-button">
+    <a href="https://checkout.pagos360.com/modal/payment-request/<<PAYMENT_REQUEST_UUIID>>" 
+       id="pagos360-pay-button"
+    >
         Pagar con Pagos360.com
     </a>
 
