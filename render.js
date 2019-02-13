@@ -1,70 +1,62 @@
 (function (win, doc) {
 
-    'use strict';
+    "use strict";
 
-    const payButton = doc.getElementById('pagos360-pay-button');
+    const payButton = doc.getElementById("pagos360-pay-button");
 
-    const overlay = doc.createElement('div');
-    overlay.id = 'p360-modal-overlay';
-    overlay.setAttribute('style', `
-            position: fixed; 
-            top: 0; 
-            bottom: 0; 
-            left: 0; 
-            right: 0; 
-            opacity: 0.3; 
-            width: 100%; 
-            height: 100%; 
-            background-color: black;
-        `);
+    const overlay = doc.createElement("div");
+    overlay.id = "p360-modal-overlay";
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.bottom = "0";
+    overlay.style.left = "0";
+    overlay.style.right = "0";
+    overlay.style.opacity = "0.3";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "black";
 
-    const overlayWrapper = doc.createElement('div');
-    overlayWrapper.id = 'p360-modal-overlay-wrapper';
+    const overlayWrapper = doc.createElement("div");
+    overlayWrapper.id = "p360-modal-overlay-wrapper";
     overlayWrapper.appendChild(overlay);
-    overlayWrapper.setAttribute('style', `
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            position: absolute;
-        `);
+    overlayWrapper.style.top = "0";
+    overlayWrapper.style.bottom = "0";
+    overlayWrapper.style.left = "0";
+    overlayWrapper.style.right = "0";
+    overlayWrapper.style.position = "absolute";
 
-    const popbox = doc.createElement('iframe');
-    popbox.id = 'p360-modal-popbox';
+    const popbox = doc.createElement("iframe");
+    popbox.id = "p360-modal-popbox";
     popbox.src = payButton.href;
-    popbox.setAttribute('style', `
-            border: 0;
-            width: 100%;
-            height: 100%;
-        `);
+    popbox.style.border = "0";
+    popbox.style.width = "100%";
+    popbox.style.height = "100%";
 
-    const contentFixed = doc.createElement('div');
-    contentFixed.id = 'p360-modal-content-fixed';
+    const contentFixed = doc.createElement("div");
+    contentFixed.id = "p360-modal-content-fixed";
     contentFixed.appendChild(popbox);
-    contentFixed.setAttribute('style', `
-            height: 34rem;
-            max-height: 90%;
-            width: fit-content;
-            max-width: 90%;
-            top: 50%;
-            left: 50%;
-            position: fixed;
-            overflow: hidden;
-            border-radius: 6px;
-            border: 1px solid #999;
-            box-shadow: -5px 5px 15px 0 rgba(0, 0, 0, .2);
-            -webkit-border-radius: 6px;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-        `);
-
+    contentFixed.style.height = "34rem";
+    contentFixed.style.maxHeight = "90%";
+    contentFixed.style.width = "25rem";
+    contentFixed.style.maxWidth = "90%";
+    contentFixed.style.top = "50%";
+    contentFixed.style.left = "50%";
+    contentFixed.style.position = "fixed";
+    contentFixed.style.overflow = "hidden";
+    contentFixed.style.borderRadius = "6px";
+    contentFixed.style.border = "1px solid #999";
+    contentFixed.style.boxShadow = "-5px 5px 15px 0 rgba(0, 0, 0, .2)";
+    contentFixed.style.webkitBorderRadius = "6px";
+    contentFixed.style.transform = "translate(-50%, -50%)";
+    contentFixed.style.msTransform = "translate(-50%, -50%)";
+    contentFixed.style.webkitTransform = "translate(-50%, -50%)";
+    
     doc.body.appendChild(overlayWrapper);
     doc.body.appendChild(contentFixed);
 
-    doc.getElementById('p360-modal-overlay-wrapper').style.display = 'none';
-    doc.getElementById('p360-modal-overlay').style.display = 'none';
-    doc.getElementById('p360-modal-content-fixed').style.display = 'none';
+    doc.getElementById("p360-modal-overlay-wrapper").style.display = "none";
+    doc.getElementById("p360-modal-overlay").style.display = "none";
+    doc.getElementById("p360-modal-content-fixed").style.display = "none";
 
     /**
      * Bind a element event with a 
@@ -78,7 +70,7 @@
         if (el.addEventListener) {
             el.addEventListener(eventName, handler);
         } else {
-            el.attachEvent('on' + eventName, function () {
+            el.attachEvent("on" + eventName, function () {
                 handler.call(el);
             });
         }
@@ -90,9 +82,9 @@
      * @param {*} event 
      */
     function openModal(event) {
-        doc.getElementById('p360-modal-overlay-wrapper').style.display = '';
-        doc.getElementById('p360-modal-overlay').style.display = '';
-        doc.getElementById('p360-modal-content-fixed').style.display = '';
+        doc.getElementById("p360-modal-overlay-wrapper").style.display = "";
+        doc.getElementById("p360-modal-overlay").style.display = "";
+        doc.getElementById("p360-modal-content-fixed").style.display = "";
 
         event.preventDefault();
     }
@@ -101,9 +93,9 @@
      * Hide the modal.
      */
     function hideModal() {
-        doc.getElementById('p360-modal-overlay-wrapper').style.display = 'none';
-        doc.getElementById('p360-modal-overlay').style.display = 'none';
-        doc.getElementById('p360-modal-content-fixed').style.display = 'none';
+        doc.getElementById("p360-modal-overlay-wrapper").style.display = "none";
+        doc.getElementById("p360-modal-overlay").style.display = "none";
+        doc.getElementById("p360-modal-content-fixed").style.display = "none";
     }
 
     /**
@@ -118,7 +110,7 @@
         }
     }
 
-    on(payButton, 'click', openModal);
-    on(win, 'keydown', hideModalWithEsc);
-    on(overlayWrapper, 'click', hideModal);
+    on(payButton, "click", openModal);
+    on(win, "keydown", hideModalWithEsc);
+    on(overlayWrapper, "click", hideModal);
 })(window, document)

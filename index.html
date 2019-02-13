@@ -21,7 +21,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <a href="https://checkout.pagos360.com/modal/payment-request/<<PAYMENT_REQUEST_UUIID>>" 
+                <a href="https://checkout.pagos360.com/payment-request/bcd47db0-2313-11e9-b4f6-0a458c07b878" 
                     id="pagos360-pay-button"
                     class="btn btn-primary">
                     Viejo checkout
@@ -38,7 +38,7 @@
                     s.type = "text/javascript";
                     s.async = true;
                     // s.src = document.location.protocol + "//checkout.pagos360.com/render.js";
-                    s.src = "render.js";
+                    s.src = "render.min.js";
                     var x = document.getElementsByTagName('script')[0];
                     x.parentNode.insertBefore(s, x);
                     window.isLoaded = true;
